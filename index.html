@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenCrypt</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!--loader-->
+    <div id="loader" class="loader">
+        <div class="loading">⚙️</div>
+    </div>
+
+    <!-- login page-->
+    <div id="loginPage" class="login-page">
+        <div class="container">
+            <div class="info-panel">
+                <h1>⚙️ GenCrypt</h1>
+                <p>Stop forgetting passwords and losing important notes. GenCrypt is your personal security toolkit that works right in your browser.</p>
+                
+                <ul class="features">
+                    <li>Generate strong passwords instantly</li>
+                    <li>Encrypt sensitive text</li>
+                    <li>Store everything in your private vault</li>
+                    <li>No accounts needed - just login and go</li>
+                </ul>
+                
+                <p class="footer-text">A simple project built while learning web development.</p>
+            </div>
+
+            <div class="login-panel">
+                <h2>Welcome Back</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" placeholder="Username" required>
+                    <input type="password" id="password" placeholder="Password (try: admin123)" required>
+                    <button type="submit">Login</button>
+                </form>
+                <p class="register-link">Need an account? <a href="#" id="registerLink">Sign up here</a></p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- dashboard -->
+    <div id="dashboard" class="dashboard hidden">
+        <nav class="sidebar">
+            <div class="brand">
+                <span class="icon">⚙️</span>
+                <span class="text">GenCrypt</span>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-item active">
+                    <span class="icon">🏠</span>
+                    <span class="text">Home</span>
+                </a>
+                <a href="#generator" class="nav-item">
+                    <span class="icon">⚡</span>
+                    <span class="text">Generator</span>
+                </a>
+                <a href="#encryption" class="nav-item">
+                    <span class="icon">🔐</span>
+                    <span class="text">Encryption</span>
+                </a>
+                <a href="#vault" class="nav-item">
+                    <span class="icon">📁</span>
+                    <span class="text">Vault</span>
+                </a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <header class="header">
+                <button id="themeBtn" class="theme-toggle">🌙</button>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </header>
+
+            <section id="home" class="content-section">
+                <h1 id="welcomeTitle">Welcome!</h1>
+                <p>Your personal security toolkit is ready. Use the sidebar to generate passwords, encrypt text, or manage your vault.</p>
+            </section>
+
+            <section id="generator" class="content-section hidden">
+                <h2>Password Generator</h2>
+                <div class="generator-options">
+                    <button id="genPassword" class="gen-btn">Generate Password</button>
+                    <button id="genUsername" class="gen-btn">Generate Username</button>
+                    <button id="genEmail" class="gen-btn">Generate Email</button>
+                </div>
+                <div id="generatorResult" class="result-box"></div>
+                <button id="saveGenerated" class="save-btn hidden">Save to Vault</button>
+                <a href="generator-advanced.html" class="advanced-link">Advanced Generator</a>
+            </section>
+
+            <section id="encryption" class="content-section hidden">
+                <h2>Text Encryption</h2>
+                <textarea id="plainText" placeholder="Enter text to encrypt..."></textarea>
+                <button id="encryptBtn" class="encrypt-btn">Encrypt Text</button>
+                <button id="decryptBtn" class="encrypt-btn hidden">Decrypt Text</button>
+                <div id="encryptedResult" class="result-box"></div>
+                <button id="saveEncrypted" class="save-btn hidden">Save to Vault</button>
+            </section>
+
+            <section id="vault" class="content-section hidden">
+                <h2>My Vault</h2>
+                <input id="vaultSearch" type="text" placeholder="Search your vault...">
+                <div id="vaultItems" class="vault-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="vault.js"></script>
+    <script src="generator.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

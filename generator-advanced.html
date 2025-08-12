@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Generator - GenCrypt</title>
+    <link rel="stylesheet" href="generator-advanced.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Advanced Generator</h1>
+            <a href="index.html#dashboard" class="back-link">← Back to Dashboard</a>
+        </header>
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="password">Password</button>
+            <button class="tab-btn" data-tab="username">Username</button>
+            <button class="tab-btn" data-tab="email">Email</button>
+        </div>
+        
+        <div id="password" class="tab-content active">
+            <h2>Password Generator</h2>
+            <div class="form-group">
+                <label>Base word (optional):</label>
+                <input type="text" id="passBase" placeholder="Anything that you want to be part of your password">
+            </div>
+            <div class="form-group">
+                <label>Length:</label>
+                <input type="number" id="passLength" value="12" min="8" max="50">
+            </div>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="includeNumbers" checked> Numbers</label>
+                <label><input type="checkbox" id="includeSymbols" checked> Symbols</label>
+                <label><input type="checkbox" id="includeMixedCase" checked> Mixed Case</label>
+            </div>
+            <button onclick="generateAdvancedPassword()" class="generate-btn">Generate Password</button>
+            <div id="passwordResult" class="result"></div>
+            <button id="savePassword" class="save-btn hidden" onclick="saveItem('password')">Save to Vault</button>
+        </div>
+        
+        <div id="username" class="tab-content">
+            <h2>Username Generator</h2>
+            <div class="form-group">
+                <label>Base word (optional):</label>
+                <input type="text" id="userBase" placeholder="e.g., gamer">
+            </div>
+            <div class="form-group">
+                <label>Style:</label>
+                <select id="userStyle">
+                    <option value="normal">Normal</option>
+                    <option value="cool">Cool Style</option>
+                    <option value="professional">Professional</option>
+                </select>
+            </div>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="addNumbers" checked> Add Numbers</label>
+                <label><input type="checkbox" id="addUnderscore"> Add Underscores</label>
+            </div>
+            <button onclick="generateAdvancedUsername()" class="generate-btn">Generate Username</button>
+            <div id="usernameResult" class="result"></div>
+            <button id="saveUsername" class="save-btn hidden" onclick="saveItem('username')">Save to Vault</button>
+        </div>
+        
+        <div id="email" class="tab-content">
+            <h2>Email Generator</h2>
+            <div class="form-group">
+                <label>Base name (optional):</label>
+                <input type="text" id="emailBase" placeholder="e.g., john">
+            </div>
+            <div class="form-group">
+                <label>Domain:</label>
+                <select id="emailDomain">
+                    <option value="gmail.com">Gmail</option>
+                    <option value="yahoo.com">Yahoo</option>
+                    <option value="outlook.com">Outlook</option>
+                    <option value="hotmail.com">Hotmail</option>
+                </select>
+            </div>
+            <div class="checkbox-group">
+                <label><input type="checkbox" id="emailNumbers" checked> Include Numbers</label>
+            </div>
+            <button onclick="generateAdvancedEmail()" class="generate-btn">Generate Email</button>
+            <div id="emailResult" class="result"></div>
+            <button id="saveEmail" class="save-btn hidden" onclick="saveItem('email')">Save to Vault</button>
+        </div>
+    </div>
+    
+    <script src="generator-advanced.js"></script>
+</body>
+</html>
